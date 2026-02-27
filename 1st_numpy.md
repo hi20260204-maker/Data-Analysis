@@ -43,7 +43,7 @@
 - Numpy 배열의 모든 요소는 동질적
 
 ### numpy 명령어
->vector = np.array(lst)                                 #-lst 파이썬을 이용한 벡터 데이터 vector는 객체<br>
+>vector = np.array(lst)(                               )#-lst 파이썬을 이용한 벡터 데이터 vector는 객체<br>
 >vector.shape                                           # -len<br>
 >vector.dtype                                           # 타입에 대한 정보<br>
 >.szie                                                  # 스칼라 전체 수<br>
