@@ -36,3 +36,19 @@
 ### 직교행렬
 - 선형 변환 중 회전 변환을 의미
 - 어떤 행렬의 행 벡터와 열 벡터가 유클리드 공간의 정규 직교를 이루는 행렬을 의미한다.
+
+### Numpy array vs Python list
+- Numpy 는 배열을 생성하고 배열 내부의 숫자 데이터를 조작하는 빠르고 효율적인 방법을 광범위하게 제공
+- Python 목록은 단일 목록 내에 다양한 데이터 유형 포함
+- Numpy 배열의 모든 요소는 동질적
+
+### numpy 명령어
+>vector = np.array(lst)               #-lst 파이썬을 이용한 벡터 데이터 vector는 객체<br>
+>vector.shape                         # -len<br>
+>vector.dtype                         # 타입에 대한 정보<br>
+>.szie                                # 스칼라 전체 수<br>
+>.ndim                                # 차원의 수<br>
+>.shape                               # 차원의 모양(벡터 수, 스칼라 수)<br>
+> 
+ ---
+
