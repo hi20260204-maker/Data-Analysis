@@ -1,0 +1,14 @@
+jupyter==1.1.1
+
+#데이터 분석용
+pandas==3.0.1
+
+#그래프용
+seaborn==0.13.2
+plotly==5.18.0 #주식 그래프 그리기 좋은 라이브러리
+
+#한글 폰트 설정
+koreanize-matplotlib
+
+#야후 파이낸스 데이터 수집
+yfinance==0.2.63

@@ -44,3 +44,72 @@ np.unique(X, return_counts=True)
 df = pd.DataFrame(iris['data'], columns=iris['feature_names'])
 df
 ```
+
+``` python
+import numpy as np
+import pandas as pd
+
+import seaborn as sns
+```
+
+``` python
+iris = sns.load_dataset("iris")
+iris.shape
+```
+
+``` python
+iris.shape[0] # 전체 데이터 수
+```
+
+``` python
+iris.shape[1] == len(iris.columns) # 전체 컬럼 수
+```
+
+``` python
+# sepal_length == 5.1 & 5.0
+cond1 = iris['sepal_length'] == 5.1
+cond2 = iris['sepal_length'] == 5.0
+
+iris[cond1|cond2]
+
+# 코드가 너무 길어짐 >> 변경 오직 or 조건일때만 isin을 사용 not and 조건
+con3 = iris['sepal_length'].isin([5.1, 5.0])
+iris[con3]
+```
+
+``` python
+# species의 ㄱ밧이 setosa가 아닌 데이터 조회
+con = iris['species'] != 'setosa' #파이썬을 이용한 방식
+iris[con]
+```
+
+``` python
+#다른 방식을 이용해서 pandas에서의 방식 => ~ 연산자(=not)사용
+con = iris['species'] == 'setosa'
+iris[~cond]
+```
+
+``` python
+#pandas의 shape에서 첫번째(=0)차원은 index이기 때문에 슬라이싱을 하면 row가 추출됨
+iris[:5] #.head()
+```
+
+``` python
+iris[-5:] #.tail()
+```
+
+``` python
+iris[:3] # row 데이터를 추출할 때는 슬라이싱
+```
+
+``` python
+#iris[["petal_length","species"]] -> 컬럼추출
+#[:3] -> row 추출
+iris[["petal_length","species"]][:3]
+```
+
+``` python
+#loc[row, column] ==> shape(row, column)
+iris.loc[:3, ["petal_length","species"]]
+```
+

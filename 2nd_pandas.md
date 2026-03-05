@@ -251,3 +251,86 @@ df
 | 2 | 3.0 | 3 |6.0|
 | 3 | NaN | 4 |NaN |
 | 4 | NaN | 5 |NaN |
+
+```
+df = pd.DataFrame(iris['data'], columns=iris['feature_names'])
+df
+```
+1
+
+```
+df['target'] = iris['target']
+df
+```
+2
+
+```
+df.head()
+```
+3
+
+```
+#sepal_length의 평균보다 크고 & petal_length의 평균보다 큰 데이터?
+# 1. sepal_length의 평균보다 크고
+# 2. petal_length의 평균보다 큰
+
+#1
+df1 = df[df['sepal length (cm)']>df['sepal length (cm)'].mean()]
+#2
+df1 = df[df['petal length (cm)']>df['petal length (cm)'].mean()]
+
+df1.head()
+
+```
+4
+
+```
+# sepal_length의 평균보다 크고 petal_length의 평균보다 큰 데이터?
+#1. sepal_length의 평균 구하기
+arr1 = df['sepal length (cm)']>df['sepal length (cm)'].mean()
+#2. petal_length의 평균 구하기
+arr2 = df['petal length (cm)']>df['petal length (cm)'].mean()
+
+```
+- and(&):양쪽모두 True 일때만 True
+- or(|):양쪽중 하나라도 True 일때 True
+
+
+```
+arr1 & arr2 #양쪽 모두 True인 경우에만 True
+```
+0      False<br>
+1      False<br>
+2      False<br>
+3      False<br>
+4      False<br>
+       ...  <br>
+145     True<br>
+146     True<br>
+147     True<br>
+148     True<br>
+149     True<br>
+Length: 150, dtype: bool
+
+```
+df.columns
+```
+Index(['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)',
+       'petal width (cm)', 'target'],
+      dtype='str')
+```
+df["sepal length (cm)"].mean()
+```
+np.float64(5.843333333333334)
+
+```
+df["target"].unique() #유니크한 문자열 조회
+```
+array([0, 1, 2])
+- 전처리를 검증하는 로직또 후반부에는 꼭 사용해야함
+```
+df["petal length (cm)"].mode()  
+```
+array([1.4, 1.5])
+
+
